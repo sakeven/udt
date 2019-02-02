@@ -48,7 +48,7 @@ const (
 	SOCK_DGRAM  = int(C.SOCK_DGRAM)
 )
 
-func Sokcet(af int, _type int) (C.UDTSOCKET, error) {
+func Socket(af int, _type int) (C.UDTSOCKET, error) {
 	s, err := C.udt_socket(C.int(af), C.int(_type), C.int(0))
 	if err != nil {
 		return C.INVALID_SOCK, err
